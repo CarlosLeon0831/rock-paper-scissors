@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <script>
+      const min = 1;
+      const max = 3;
+      function getComputerChoice(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
+      const rndInt = getComputerChoice(min, max);
+      console.log(rndInt);
+
+      if (rndInt === 1) {
+          console.log("Rock");
+        } else if (rndInt === 2) {
+          console.log("Paper");
+        } else if (rndInt === 3) {
+          console.log("Scissors");
+        } 
+    </script>
+    <!-- Generate random number between 1 and 3 -->
+    <!-- if random number = 1 then it's Rock -->
+    <!-- if random number = 2 then it's Paper -->
+    <!-- if random number = 3 then it's Scissors -->
+    <!-- return output -->
+  </body>
+</html>
