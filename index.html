@@ -46,10 +46,13 @@
 
       function game() {
         for (let i = 0; i < 5; i++) {
+          let playerSelection = prompt("Enter: Rock, Paper or Scissors");
+          const computerSelection = getComputerChoice();
           const currentRound = playRound(playerSelection, computerSelection);
+          console.log(currentRound);
         }
       }
-      
+
       console.log(game());
 
     </script>
