@@ -9,21 +9,35 @@
   </head>
   <body>
     <script>
-      const min = 1;
-      const max = 3;
-      function getComputerChoice(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
+      let playerSelection = prompt("Enter: Rock, Paper or Scissors");
+      // Random Computer Choice
+      const options = ["Rock", "Paper", "Scissors"];
+      function getComputerChoice() {
+        return options[Math.floor(Math.random() * options.length)];
       }
-      const rndInt = getComputerChoice(min, max);
-      console.log(rndInt);
 
-      if (rndInt === 1) {
-          console.log("Rock");
-        } else if (rndInt === 2) {
-          console.log("Paper");
-        } else if (rndInt === 3) {
-          console.log("Scissors");
-        } 
+      function playRound(playerSelection, computerSelection) {
+        computerSelection = getComputerChoice().toLowerCase();
+        playerSelection = playerSelection.toLowerCase();
+        console.log(computerSelection);
+        if (playerSelection == computerSelection) {
+          console.log("Draw");
+        } else if (
+          (playerSelection == "rock" && computerSelection == "paper") ||
+          (playerSelection == "paper" && computerSelection == "scissors") ||
+          (playerSelection == "scissors" && computerSelection == "rock")
+        ) {
+          console.log("You Lose! " + computerSelection + " beats " + playerSelection);
+        } else if (
+          (playerSelection == "rock" && computerSelection == "scissors") ||
+          (playerSelection == "paper" && computerSelection == "rock") ||
+          (playerSelection == "scissors" && computerSelection == "paper")
+        ) {
+          console.log("You Win! " + playerSelection + " beats " + computerSelection);
+        }
+      }
+     
+      console.log(playRound(playerSelection));
     </script>
     <!-- Generate random number between 1 and 3 -->
     <!-- if random number = 1 then it's Rock -->
