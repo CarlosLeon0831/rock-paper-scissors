@@ -6,55 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <script>
-      //  input Player Selection
-      let playerSelection = prompt("Enter: Rock, Paper or Scissors");
-      // Random Computer Choice
-      const options = ["Rock", "Paper", "Scissors"];
-      function getComputerChoice() {
-        return options[Math.floor(Math.random() * options.length)];
-      }
-
-      function playRound(playerSelection, computerSelection) {
-        // Make selection's case sensitive by changing them to lower case
-        computerSelection = getComputerChoice().toLowerCase();
-        playerSelection = playerSelection.toLowerCase();
-        // if both selections are the same
-        if (playerSelection == computerSelection) {
-          return "Draw";
-          // if the computer's selection wins
-        } else if (
-          (playerSelection == "rock" && computerSelection == "paper") ||
-          (playerSelection == "paper" && computerSelection == "scissors") ||
-          (playerSelection == "scissors" && computerSelection == "rock")
-        ) {
-          return "You Lose! " + computerSelection + " beats " + playerSelection;
-          // if the player's selection wins
-        } else if (
-          (playerSelection == "rock" && computerSelection == "scissors") ||
-          (playerSelection == "paper" && computerSelection == "rock") ||
-          (playerSelection == "scissors" && computerSelection == "paper")
-        ) {
-          return "You Win! " + playerSelection + " beats " + computerSelection;
-        }
-      }
-      // // test
-      // const computerSelection = getComputerChoice();
-      // console.log(playRound(playerSelection, computerSelection));
-
-      function game() {
-        for (let i = 0; i < 5; i++) {
-          let playerSelection = prompt("Enter: Rock, Paper or Scissors");
-          const computerSelection = getComputerChoice();
-          const currentRound = playRound(playerSelection, computerSelection);
-          console.log(currentRound);
-        }
-      }
-
-      console.log(game());
-
-    </script>
+    <div class="btn__container">
+      <button class="btn" id="btnSword">
+        <img src="./img/swordIcon.png" />
+      </button>
+      <button class="btn" id="btnAxe">
+        <img src="./img/axeIcon.png" />
+      </button>
+      <button class="btn" id="btnLance">
+        <img src="./img/lanceIcon.png" />
+      </button>
+    </div>
+    <div id="results">
+      
+    </div>
   </body>
 </html>

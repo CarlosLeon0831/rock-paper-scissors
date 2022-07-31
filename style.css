@@ -1,0 +1,22 @@
+* {
+    border: 1px solid red;
+}
+
+body {
+    background-image: url('./img/bg-image.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.btn__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    background-color: transparent;
+    margin: 1rem;
+}
