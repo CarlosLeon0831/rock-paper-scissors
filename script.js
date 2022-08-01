@@ -8,6 +8,7 @@ let draw = 0;
 let pWin = 0;
 let cWin = 0;
 let winner = "";
+let finalResult = "";
 
 function reset() {
   draw = 0;
@@ -98,21 +99,12 @@ function score() {
   cScoreContainer.appendChild(cScore);
 
   if (cWin >= 5) {
-    const winnerDisplay = document.querySelector("#winnerDisplay");
-    const winner = document.createElement("p");
-    winner.classList.add("winner");
-    winner.textContent = "YOU LOSE...";
-    winnerDisplay.appendChild(winner);
-    console.log("YOU LOSE...");
+    finalResult = 'YOU LOSE...';
     reset();
     resetPage();
   }
   if (pWin >= 5) {
-    const winnerDisplay = document.querySelector("#winnerDisplay");
-    const winner = document.createElement("p");
-    winner.classList.add("winner");
-    winner.textContent = "YOU WIN!";
-    winnerDisplay.appendChild(winner);
+    finalResult = 'YOU WIN!';
     reset();
     resetPage();
   }
@@ -126,7 +118,18 @@ function score() {
 
 function resetPage() {
   const resetPage = document.querySelector("#resetPage");
-  const reset = document.createElement("div");
-  reset.classList.add("reset");
-  resetPage.appendChild(reset);
+  const resetText = document.createElement("div");
+  resetText.classList.add("resetText");
+  resetText.textContent = `${finalResult}`;
+  resetPage.appendChild(resetText);
+
+  const resetButton = document.querySelector("#resetButton")
+  const rButton = document.createElement("button");
+  rButton.classList.add("rButton");
+  rButton.textContent = ("Try Again");
+  resetButton.appendChild(rButton);
+
+  rButton.addEventListener("click", function () {
+    location.reload();
+  });
 }

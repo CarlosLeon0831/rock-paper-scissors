@@ -95,13 +95,50 @@ body {
   padding: 2rem 2rem;
 }
 
-.reset {
+.resetText {
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.466);
   position: absolute;
   display: flex;
   flex: 1;
+  align-items: center;
+  justify-content: center;
+  font-size: 200px;
+  color: aliceblue;
+}
+
+.resetPage {
+  display: flex;
+  display: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.resetButton {
+  display: flex;
+  display: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.rButton {
+  background-color: rgb(253, 253, 253);
+  color: black;
+  font-size: 50px;
+  font-family: "Times New Roman", Times, serif;
+  border: none;
+  padding: 1rem;
+
+  position: absolute;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+
+  cursor: pointer;
 }
 
 #results {
