@@ -69,3 +69,12 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+#score {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+  }
+  
