@@ -9,26 +9,31 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="btn__container">
-      <button class="btn" id="btnSword">
-        <img src="./img/swordIcon.png" />
-      </button>
-      <button class="btn" id="btnAxe">
-        <img src="./img/axeIcon.png" />
-      </button>
-      <button class="btn" id="btnLance">
-        <img src="./img/lanceIcon.png" />
-      </button>
-    </div>
-    <div id="results">
-      <div id="pSelectContainer"></div>
-      <div id="cSelectContainer"></div>
-      <div id="matchResultContainer"></div>
-    </div>
-    <div id="score">
-      <div id="pScoreContainer"></div>
-      <div id="cScoreContainer"></div>
-      <div id="dScoreContainer"></div>
+    <div class="container">
+      <div id="winnerDisplay"></div>
+      <div class="btn__container">
+        <button class="btn" id="btnSword">
+          <img src="./img/swordIcon.png" />
+        </button>
+        <button class="btn" id="btnAxe">
+          <img src="./img/axeIcon.png" />
+        </button>
+        <button class="btn" id="btnLance">
+          <img src="./img/lanceIcon.png" />
+        </button>
+      </div>
+      <div class="matchInfo">
+        <div id="results">
+          <div id="pSelectContainer"></div>
+          <div id="cSelectContainer"></div>
+          <div id="matchResultContainer"></div>
+        </div>
+        <div id="score">
+          <div id="pScoreContainer"></div>
+          <div id="cScoreContainer"></div>
+          <div id="dScoreContainer"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

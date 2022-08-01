@@ -1,19 +1,19 @@
-//  input Player Selection
-// let playerSelection = prompt("Enter: sword, lance or axe");
 // Random Computer Choice
 const options = ["sword", "lance", "axe"];
 function getComputerChoice() {
   return options[Math.floor(Math.random() * options.length)];
 }
-function restart() {
-  let roundResult = "";
-  let playerSelection = "";
-  let computerSelection = "";
-}
 
 let draw = 0;
 let pWin = 0;
 let cWin = 0;
+let winner = "";
+
+function reset() {
+  draw = 0;
+  pWin = 0;
+  cWin = 0;
+}
 
 function playRound(playerSelection, computerSelection) {
   // if both selections are the same
@@ -39,16 +39,6 @@ function playRound(playerSelection, computerSelection) {
     pWin = pWin + 1;
   }
 }
-
-// function game() {
-//   // for (let i = 0; i < 5; i++) {
-//   // let playerSelection = prompt("Enter: sword, lance or axe");
-//   const computerSelection = getComputerChoice();
-//   const currentRound = playRound(playerSelection, computerSelection);
-//   console.log(currentRound);
-//   // }
-// }
-// console.log(game());
 
 // DOM Manipulation
 
@@ -92,20 +82,38 @@ function score() {
   const dScoreContainer = document.querySelector("#dScoreContainer");
   const dScore = document.createElement("p");
   dScore.classList.add("dScore");
-  dScore.textContent = 'Draws: ' + draw;
+  dScore.textContent = "Draws: " + draw;
   dScoreContainer.appendChild(dScore);
 
   const pScoreContainer = document.querySelector("#pScoreContainer");
   const pScore = document.createElement("p");
   pScore.classList.add("pScore");
-  pScore.textContent = 'Player: ' + pWin;
+  pScore.textContent = "Player: " + pWin;
   pScoreContainer.appendChild(pScore);
 
   const cScoreContainer = document.querySelector("#cScoreContainer");
   const cScore = document.createElement("p");
   cScore.classList.add("cScore");
-  cScore.textContent = 'CPU: ' + cWin;
+  cScore.textContent = "CPU: " + cWin;
   cScoreContainer.appendChild(cScore);
+
+  if (cWin >= 5) {
+    const winnerDisplay = document.querySelector("#winnerDisplay");
+    const winner = document.createElement("p");
+    winner.classList.add("winner");
+    winner.textContent = "YOU LOSE...";
+    winnerDisplay.appendChild(winner);
+    console.log("YOU LOSE...");
+    reset();
+  }
+  if (pWin >= 5) {
+    const winnerDisplay = document.querySelector("#winnerDisplay");
+    const winner = document.createElement("p");
+    winner.classList.add("winner");
+    winner.textContent = "YOU WIN!";
+    winnerDisplay.appendChild(winner);
+    reset();
+  }
 
   btnSword.addEventListener("click", function () {
     dScore.remove();

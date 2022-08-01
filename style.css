@@ -1,17 +1,41 @@
-/* * {
-    border: 1px solid red;
-} */
+* {
+  border: 1px solid red;
+}
+
+html {
+  margin: 0;
+}
 
 body {
   background-image: url("./img/bg-image.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  background-position: center;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.winnerDisplay,
+.matchInfo {
+  display: flex;
+  flex: 1;
+}
+
+.matchInfo {
+  flex-direction: column;
 }
 
 .btn__container {
   display: flex;
   flex-direction: row;
+  flex: 0.5;
   align-items: center;
   justify-content: center;
 }
@@ -37,12 +61,20 @@ body {
   font-size: 32px;
   background-color: rgba(0, 0, 0, 0.555);
   display: flex;
-  flex: 1;
   align-items: center;
   justify-content: center;
   height: 2rem;
   margin: 1rem;
   padding: 2rem 2rem;
+}
+
+.pSelect,
+.cSelect {
+  flex: 1;
+}
+
+.matchResult {
+  flex: 2;
 }
 
 .dScore,
@@ -68,13 +100,16 @@ body {
   flex: 1;
   align-items: center;
   justify-content: center;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 #score {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-  }
-  
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
