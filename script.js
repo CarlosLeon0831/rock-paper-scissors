@@ -5,9 +5,12 @@ const options = ["sword", "lance", "axe"];
 function getComputerChoice() {
   return options[Math.floor(Math.random() * options.length)];
 }
+function restart() {
+  let roundResult = "";
+  let playerSelection = "";
+  let computerSelection = "";
+}
 
-let roundResult = "";
-let winner = "";
 
 function playRound(playerSelection, computerSelection) {
   // if both selections are the same
@@ -43,6 +46,7 @@ function playRound(playerSelection, computerSelection) {
 
 // DOM Manipulation
 
+
 const btnSword = document.querySelector("#btnSword");
 btnSword.addEventListener("click", function () {
   let playerSelection = "sword";
@@ -52,19 +56,21 @@ btnSword.addEventListener("click", function () {
   playRound(playerSelection, computerSelection);
   console.log(roundResult);
 
-  const results = document.querySelector("#results");
+  const pSelectContainer = document.querySelector("#pSelectContainer");
   const pSelect = document.createElement("p");
   pSelect.classList.add("pSelect");
   pSelect.textContent = `Player: ${playerSelection}`;
-  results.appendChild(pSelect);
+  pSelectContainer.appendChild(pSelect);
 
+  const cSelectContainer = document.querySelector("#cSelectContainer");
   const cSelect = document.createElement("p");
   cSelect.classList.add("cSelect");
   cSelect.textContent = `CPU: ${computerSelection}`;
-  results.insertBefore(cSelect, pSelect);
+  cSelectContainer.appendChild(cSelect);
 
+  const matchResultContainer = document.querySelector("#matchResultContainer");
   const matchResult = document.createElement("p");
   matchResult.classList.add("matchResult");
   matchResult.textContent = `${roundResult}`
-  results.insertBefore(matchResult, cSelect)
+  matchResultContainer.appendChild(matchResult)
 });
