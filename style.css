@@ -20,3 +20,11 @@ body {
     background-color: transparent;
     margin: 1rem;
 }
+
+.pSelect {
+    color: black;
+    background-color: pink;
+    display: flex;
+    flex: 1;
+    height: 2rem;
+}

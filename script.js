@@ -7,6 +7,7 @@ function getComputerChoice() {
 }
 
 let roundResult = "";
+let winner = "";
 
 function playRound(playerSelection, computerSelection) {
   // if both selections are the same
@@ -30,10 +31,6 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-// // test
-// const computerSelection = getComputerChoice();
-// console.log(playRound(playerSelection, computerSelection));
-
 // function game() {
 //   // for (let i = 0; i < 5; i++) {
 //   // let playerSelection = prompt("Enter: sword, lance or axe");
@@ -52,16 +49,22 @@ btnSword.addEventListener("click", function () {
   const computerSelection = getComputerChoice();
   console.log(playerSelection);
   console.log(computerSelection);
-  if (playerSelection == computerSelection) {
-    roundResult = "Draw";
-  } else if (playerSelection == "sword" && computerSelection == "lance") {
-    roundResult =
-      "You Lose! " + computerSelection + " beats " + playerSelection;
-  } else if (playerSelection == "sword" && computerSelection == "axe") {
-    roundResult = "You Win! " + playerSelection + " beats " + computerSelection;
-  }
+  playRound(playerSelection, computerSelection);
   console.log(roundResult);
-});
 
-const pSelect = document.querySelector('#pSelect');
-pSelect.textContent = roundResult;
+  const results = document.querySelector("#results");
+  const pSelect = document.createElement("p");
+  pSelect.classList.add("pSelect");
+  pSelect.textContent = `Player: ${playerSelection}`;
+  results.appendChild(pSelect);
+
+  const cSelect = document.createElement("p");
+  cSelect.classList.add("cSelect");
+  cSelect.textContent = `CPU: ${computerSelection}`;
+  results.insertBefore(cSelect, pSelect);
+
+  const matchResult = document.createElement("p");
+  matchResult.classList.add("matchResult");
+  matchResult.textContent = `${roundResult}`
+  results.insertBefore(matchResult, cSelect)
+});
