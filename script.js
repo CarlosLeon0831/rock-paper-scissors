@@ -105,6 +105,7 @@ function score() {
     winnerDisplay.appendChild(winner);
     console.log("YOU LOSE...");
     reset();
+    resetPage();
   }
   if (pWin >= 5) {
     const winnerDisplay = document.querySelector("#winnerDisplay");
@@ -113,6 +114,7 @@ function score() {
     winner.textContent = "YOU WIN!";
     winnerDisplay.appendChild(winner);
     reset();
+    resetPage();
   }
 
   btnSword.addEventListener("click", function () {
@@ -120,4 +122,11 @@ function score() {
     pScore.remove();
     cScore.remove();
   });
+}
+
+function resetPage() {
+  const resetPage = document.querySelector("#resetPage");
+  const reset = document.createElement("div");
+  reset.classList.add("reset");
+  resetPage.appendChild(reset);
 }
