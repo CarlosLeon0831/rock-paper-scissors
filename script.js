@@ -77,6 +77,117 @@ btnSword.addEventListener("click", function () {
     cSelect.remove();
     matchResult.remove();
   });
+
+  btnAxe.addEventListener("click", function () {
+    pSelect.remove();
+    cSelect.remove();
+    matchResult.remove();
+  });
+
+  btnLance.addEventListener("click", function () {
+    pSelect.remove();
+    cSelect.remove();
+    matchResult.remove();
+  });
+
+});
+
+const btnAxe = document.querySelector("#btnAxe");
+btnAxe.addEventListener("click", function () {
+  let playerSelection = "axe";
+  const computerSelection = getComputerChoice();
+  console.log(playerSelection);
+  console.log(computerSelection);
+  playRound(playerSelection, computerSelection);
+  console.log(roundResult);
+
+  const pSelectContainer = document.querySelector("#pSelectContainer");
+  const pSelect = document.createElement("p");
+  pSelect.classList.add("pSelect");
+  pSelect.textContent = `Player: ${playerSelection}`;
+  pSelectContainer.appendChild(pSelect);
+
+  const cSelectContainer = document.querySelector("#cSelectContainer");
+  const cSelect = document.createElement("p");
+  cSelect.classList.add("cSelect");
+  cSelect.textContent = `CPU: ${computerSelection}`;
+  cSelectContainer.appendChild(cSelect);
+
+  const matchResultContainer = document.querySelector("#matchResultContainer");
+  const matchResult = document.createElement("p");
+  matchResult.classList.add("matchResult");
+  matchResult.textContent = `${roundResult}`;
+  matchResultContainer.appendChild(matchResult);
+
+  score();
+
+  btnAxe.addEventListener("click", function () {
+    pSelect.remove();
+    cSelect.remove();
+    matchResult.remove();
+  });
+
+  btnSword.addEventListener("click", function () {
+    pSelect.remove();
+    cSelect.remove();
+    matchResult.remove();
+  });
+
+  btnLance.addEventListener("click", function () {
+    pSelect.remove();
+    cSelect.remove();
+    matchResult.remove();
+  });
+
+});
+
+const btnLance = document.querySelector("#btnLance");
+btnLance.addEventListener("click", function () {
+  let playerSelection = "lance";
+  const computerSelection = getComputerChoice();
+  console.log(playerSelection);
+  console.log(computerSelection);
+  playRound(playerSelection, computerSelection);
+  console.log(roundResult);
+
+  const pSelectContainer = document.querySelector("#pSelectContainer");
+  const pSelect = document.createElement("p");
+  pSelect.classList.add("pSelect");
+  pSelect.textContent = `Player: ${playerSelection}`;
+  pSelectContainer.appendChild(pSelect);
+
+  const cSelectContainer = document.querySelector("#cSelectContainer");
+  const cSelect = document.createElement("p");
+  cSelect.classList.add("cSelect");
+  cSelect.textContent = `CPU: ${computerSelection}`;
+  cSelectContainer.appendChild(cSelect);
+
+  const matchResultContainer = document.querySelector("#matchResultContainer");
+  const matchResult = document.createElement("p");
+  matchResult.classList.add("matchResult");
+  matchResult.textContent = `${roundResult}`;
+  matchResultContainer.appendChild(matchResult);
+
+  score();
+
+  btnAxe.addEventListener("click", function () {
+    pSelect.remove();
+    cSelect.remove();
+    matchResult.remove();
+  });
+
+  btnSword.addEventListener("click", function () {
+    pSelect.remove();
+    cSelect.remove();
+    matchResult.remove();
+  });
+
+  btnLance.addEventListener("click", function () {
+    pSelect.remove();
+    cSelect.remove();
+    matchResult.remove();
+  });
+
 });
 
 function score() {
@@ -99,12 +210,12 @@ function score() {
   cScoreContainer.appendChild(cScore);
 
   if (cWin >= 5) {
-    finalResult = 'YOU LOSE...';
+    finalResult = "YOU LOSE...";
     reset();
     resetPage();
   }
   if (pWin >= 5) {
-    finalResult = 'YOU WIN!';
+    finalResult = "YOU WIN!";
     reset();
     resetPage();
   }
@@ -114,6 +225,19 @@ function score() {
     pScore.remove();
     cScore.remove();
   });
+
+  btnAxe.addEventListener("click", function () {
+    dScore.remove();
+    pScore.remove();
+    cScore.remove();
+  });
+
+  btnLance.addEventListener("click", function () {
+    dScore.remove();
+    pScore.remove();
+    cScore.remove();
+  });
+
 }
 
 function resetPage() {
@@ -123,10 +247,10 @@ function resetPage() {
   resetText.textContent = `${finalResult}`;
   resetPage.appendChild(resetText);
 
-  const resetButton = document.querySelector("#resetButton")
+  const resetButton = document.querySelector("#resetButton");
   const rButton = document.createElement("button");
   rButton.classList.add("rButton");
-  rButton.textContent = ("Try Again");
+  rButton.textContent = "Try Again";
   resetButton.appendChild(rButton);
 
   rButton.addEventListener("click", function () {
