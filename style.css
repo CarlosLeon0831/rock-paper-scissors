@@ -3,46 +3,69 @@
 } */
 
 body {
-    background-image: url('./img/bg-image.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+  background-image: url("./img/bg-image.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .btn__container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn {
-    background-color: transparent;
-    margin: 1rem;
-    border: none;
+  background-color: transparent;
+  margin: 1rem;
+  border: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.25);
+  filter: brightness(120%);
 }
 
 .pSelect,
 .cSelect,
 .matchResult {
-    color: rgb(255, 255, 255);
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    font-size: 32px;
-    background-color: rgba(0, 0, 0, 0.555);
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    height: 2rem;
-    margin: 1rem;
-    padding: 2rem 2rem;
+  color: rgb(255, 255, 255);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 32px;
+  background-color: rgba(0, 0, 0, 0.555);
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  margin: 1rem;
+  padding: 2rem 2rem;
+}
+
+.dScore,
+.pScore,
+.cScore {
+  color: rgb(255, 255, 255);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 32px;
+  background-color: rgba(0, 0, 0, 0.555);
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  margin: 1rem;
+  padding: 2rem 2rem;
 }
 
 #results {
-    display: flex;
-    flex-direction: row;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 }
